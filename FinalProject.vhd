@@ -5,19 +5,18 @@ ENTITY tiktaktoe IS
 PORT(
 	trig1, trig2, trig3, trig4, trig5, trig6, trig7, trig8, trig9: IN std_logic;
 	out1a, out1b, out2a, out2b, out3a, out3b, out4a, out4b, out5a, out5b, out6a, out6b, out7a, out7b, out8a, out8b, out9a, out9b: OUT std_logic);
-	team: OUT std_logic);
 END tiktaktoe;
 
 ARCHITECTURE arc OF tiktaktoe IS
-signal stat1a, stat1b, stat2a, stat2b, stat3a, stat3b, stat4a, stat4b, stat5a, stat5b, stat6a, stat6b, stat7a, stat7b, stat8a, stat8b, stat9a, stat9b : std_ulogic := '0'
-signal set1a, set1b, set2a, set2b, set3a, set3b, set4a, set4b, set5a, set5b, set6a, set6b, set7a, set7b, set8a, set8b, set9a, set9b : std_ulogic := '0'
-signal done1, done2, done3, done4, done5, done6, done7, done8, done9: std_ulogic := '0'
-signal wina, winb, checkwin, drawgame, reset, dispmode, gameover, clk, winclk: std_ulogic := '0'
+signal stat1a, stat1b, stat2a, stat2b, stat3a, stat3b, stat4a, stat4b, stat5a, stat5b, stat6a, stat6b, stat7a, stat7b, stat8a, stat8b, stat9a, stat9b : std_ulogic := '0';
+signal set1a, set1b, set2a, set2b, set3a, set3b, set4a, set4b, set5a, set5b, set6a, set6b, set7a, set7b, set8a, set8b, set9a, set9b : std_ulogic := '0';
+signal done1, done2, done3, done4, done5, done6, done7, done8, done9: std_ulogic := '0';
+signal wina, winb, checkwin, drawgame, reset, dispmode, gameover, clk, winclk, team: std_ulogic := '0';
 BEGIN
 	
 	process
 	begin
-		wait 10ms;
+		wait for 10 ms;
 		clk <= not clk;
 	end process;
 	
@@ -123,8 +122,8 @@ BEGIN
 					done1 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out1b <= '1'
-					done1 <= '1'
+					out1b <= '1';
+					done1 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -141,8 +140,8 @@ BEGIN
 					done2 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out2b <= '1'
-					done2 <= '1'
+					out2b <= '1';
+					done2 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -159,8 +158,8 @@ BEGIN
 					done3 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out3b <= '1'
-					done3 <= '1'
+					out3b <= '1';
+					done3 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -177,8 +176,8 @@ BEGIN
 					done4 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out4b <= '1'
-					done4 <= '1'
+					out4b <= '1';
+					done4 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -195,8 +194,8 @@ BEGIN
 					done5 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out5b <= '1'
-					done5 <= '1'
+					out5b <= '1';
+					done5 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -213,8 +212,8 @@ BEGIN
 					done6 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out6b <= '1'
-					done6 <= '1'
+					out6b <= '1';
+					done6 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -231,8 +230,8 @@ BEGIN
 					done7 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out7b <= '1'
-					done7 <= '1'
+					out7b <= '1';
+					done7 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -249,8 +248,8 @@ BEGIN
 					done8 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out8b <= '1'
-					done8 <= '1'
+					out8b <= '1';
+					done8 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -267,8 +266,8 @@ BEGIN
 					done9 <= '1';
 					team <= '1';
 				elsif(team = '1') then
-					out9b <= '1'
-					done9 <= '1'
+					out9b <= '1';
+					done9 <= '1';
 					team <= '0';
 				end if;
 			end if;
@@ -297,6 +296,7 @@ BEGIN
 	
 	process(winclk)
 	variable count : integer range 0 to 255 := 0;
+	begin
 		if(wina = '1') then -- player a condition
 			if(count <= 10) then
 				set1a <= '0';
@@ -345,7 +345,7 @@ BEGIN
 				set8a <= '0';
 				set9a <= '0';
 				count := count + 1;
-			elsif(count <= 146)
+			elsif(count <= 146) then
 				set1a <= '1';
 				set2a <= '1';
 				set3a <= '1';
