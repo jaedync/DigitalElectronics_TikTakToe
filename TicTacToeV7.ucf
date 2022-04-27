@@ -1,0 +1,49 @@
+
+NET "CLK"					LOC = P38;
+NET "player_o"				LOC = P68;
+NET "RST"					LOC = P70;
+NET "a"						LOC = P64;
+NET "c"						LOC = P69;
+
+NET "seg[0]"				LOC = P130;
+NET "seg[1]"				LOC = P129;
+NET "seg[2]"				LOC = P128;
+NET "seg[3]"				LOC = P126;
+NET "seg[4]"				LOC = P56;
+NET "seg[5]"				LOC = P53;
+
+NET "oEND[0]"				LOC = P78;
+NET "oEND[1]"				LOC = P80;
+NET "oEND[2]"				LOC = P82;
+NET "oEND[3]"				LOC = P85;
+NET "oEND[4]"				LOC = P87;
+NET "oEND[5]"				LOC = P91`;
+
+NET "BTN[0]"				LOC = P110;
+NET "BTN[1]"				LOC = P106;
+NET "BTN[2]"				LOC = P18;
+NET "BTN[3]"				LOC = P16;
+NET "BTN[4]"				LOC = P14;
+NET "BTN[5]"				LOC = P44;
+NET "BTN[6]"				LOC = P46;
+NET "BTN[7]"				LOC = P49;
+NET "BTN[8]"				LOC = P51;
+
+NET "n1[0]"					LOC = P111;
+NET "n1[1]"					LOC = P107;
+NET "n2[0]"					LOC = P105;
+NET "n2[1]"					LOC = P17;
+NET "n3[0]"					LOC = P15;
+NET "n3[1]"					LOC = P13;
+NET "n4[0]"					LOC = P45;
+NET "n4[1]"					LOC = P48;
+NET "n5[0]"					LOC = P50;
+NET "n5[1]"					LOC = P52;
+NET "n6[0]"					LOC = P71;
+NET "n6[1]"					LOC = P75;
+NET "n7[0]"					LOC = P77;
+NET "n7[1]"					LOC = P79;
+NET "n8[0]"					LOC = P81;
+NET "n8[1]"					LOC = P83;
+NET "n9[0]"					LOC = P86;
+NET "n9[1]"					LOC = P88;
