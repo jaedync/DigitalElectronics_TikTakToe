@@ -1,3 +1,11 @@
+----------------------------------------------------------------------------------
+-- Engineer: 		Jaedyn Chilton
+-- Create Date:    	03:15 04/27/2022
+-- Project Name: 	TicTacToeV7
+-- Target Devices: 	CoolRunner II
+-- Description:    	VHDL is fun-ish
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_arith.all;
